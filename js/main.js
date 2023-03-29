@@ -12,21 +12,28 @@ eta = parseInt(eta);
 
 let prezzoPerChilometro = 0.21
 let chilometriInseriti = chilometri
-let prezzoTotale = 0.21 * chilometri
+let prezzoTicket = 0.21 * chilometri
 
-console.log("Il prezzo totale è:" + prezzoTotale);
+console.log("Il prezzo totale è:" + prezzoTicket);
+
+let prezzoTicketDiscount20 = prezzoTicket / 100 * 80
+let prezzoTicketDiscount40 = prezzoTicket / 100 * 60
 
 // Applicare lo sconto in base all'età inserita
 
 if(eta < 18){
-  console.log("Si applica lo sconto del 20%, il totale è quindi:" + prezzoTotale / 100 * 80);
+  console.log("Si applica lo sconto del 20%, il totale è quindi:" + prezzoTicketDiscount20);
 
 }else if (eta > 65){
-    console.log("Si applica lo sconto del 40%, il totale è quindi:" + prezzoTotale / 100 * 60);
+    console.log("Si applica lo sconto del 40%, il totale è quindi:" + prezzoTicketDiscount40);
+}else{
+    console.log("Prezzo standard, il costo è di:" + prezzoTicket)
 }
 
 
-document.getElementById("prezzo totale").innerHTML = prezzoTotale
+document.getElementById("prezzobiglietto").innerHTML = prezzoTicket
 
+document.getElementById("sconto").innerHTML = prezzoTicketDiscount20
+document.getElementById("sconto").innerHTML = prezzoTicketDiscount40
 
 
